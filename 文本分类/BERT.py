@@ -499,3 +499,8 @@ input_ids_test, attention_mask_test = make_inputs(tokenizer, model_type, test.te
 
 y_pred = model.predict([input_ids_test, attention_mask_test])
 pred = np.argmax(y_pred, axis = 1)
+
+'''
+TF版本： https://www.kaggle.com/cdeotte/tensorflow-roberta-0-705
+'''
+
