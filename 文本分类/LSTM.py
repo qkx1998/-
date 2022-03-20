@@ -87,7 +87,7 @@ BATCH_SIZE = 1024
 EPOCHS = 10
 
 sequence_input = Input(shape=(MAX_SEQUENCE_LENGTH,), dtype='int32')
-embedding_sequences = Embedding(MAX_NB_WORDS, EMBEDDING_DIM)(sequence_input)
+embedding_sequences = Embedding(vocab_size, EMBEDDING_DIM)(sequence_input)
 x = SpatialDropout1D(0.2)(embedding_sequences)
 x = Conv1D(64, 5, activation='relu')(x)
 x = Bidirectional(LSTM(64, dropout=0.2, recurrent_dropout=0.2))(x)
